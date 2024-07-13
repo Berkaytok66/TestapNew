@@ -52,7 +52,11 @@ import com.mebubilisim.trtoolspro.Class.PageState
 import com.mebubilisim.trtoolspro.Class.iptalAndNextClass
 import com.mebubilisim.trtoolspro.MainActivity
 import com.mebubilisim.trtoolspro.R
+<<<<<<< HEAD
 import com.mebubilisim.trtoolspro.SountTestPages.SoundTestPageActivity
+=======
+import com.mebubilisim.trtoolspro.SountTest.SountTestPage
+>>>>>>> bafdf16 (2 commit)
 import com.mebubilisim.trtoolspro.WifiAndBLTestfile.ui.theme.TrtoolsproTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -103,7 +107,11 @@ fun GpsTestScreen(viewModel: LocationViewModel = viewModel(),context : Context) 
     val pageController by ServerDataRepository.pageController.collectAsState()
     LaunchedEffect(pageController) {
         if (pageController == 2 || pageController == 3) {
+<<<<<<< HEAD
             iptalAndNextClass(context, MainActivity::class.java, SoundTestPageActivity::class.java, "ScreenBrightnessTestActivity")
+=======
+            iptalAndNextClass(context, MainActivity::class.java, SountTestPage::class.java, "ScreenBrightnessTestActivity")
+>>>>>>> bafdf16 (2 commit)
         }
     }
     Column(
@@ -180,7 +188,11 @@ fun GpsTestScreen(viewModel: LocationViewModel = viewModel(),context : Context) 
                         progress = 100
                     )
                 }
+<<<<<<< HEAD
                 PageState(context, 1, 12, SoundTestPageActivity::class.java, MainActivity::class.java)
+=======
+                PageState(context, 1, 12, SountTestPage::class.java, MainActivity::class.java)
+>>>>>>> bafdf16 (2 commit)
             }
         }
 
@@ -214,7 +226,11 @@ fun GpsTestScreen(viewModel: LocationViewModel = viewModel(),context : Context) 
                     coroutineScope.launch {
                         delay(500)
                         // Proceed to next screen
+<<<<<<< HEAD
                         PageState(context, 1, 12, SoundTestPageActivity::class.java, MainActivity::class.java)
+=======
+                        PageState(context, 1, 12, SountTestPage::class.java, MainActivity::class.java)
+>>>>>>> bafdf16 (2 commit)
 
                     }
                 },
@@ -240,7 +256,11 @@ fun GpsTestScreen(viewModel: LocationViewModel = viewModel(),context : Context) 
                     coroutineScope.launch {
                         delay(500)
                         // Proceed to next screen
+<<<<<<< HEAD
                         PageState(context, 1, 12, SoundTestPageActivity::class.java, MainActivity::class.java)
+=======
+                        PageState(context, 1, 12, SountTestPage::class.java, MainActivity::class.java)
+>>>>>>> bafdf16 (2 commit)
 
                     }
                 },

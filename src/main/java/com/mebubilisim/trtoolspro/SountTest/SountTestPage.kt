@@ -51,11 +51,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
+<<<<<<< HEAD
+=======
+import com.mebubilisim.trtoolspro.Class.PageState
+>>>>>>> bafdf16 (2 commit)
 import com.mebubilisim.trtoolspro.Class.iptalAndNextClass
 import com.mebubilisim.trtoolspro.MainActivity
 import com.mebubilisim.trtoolspro.R
 import com.mebubilisim.trtoolspro.SountTest.ui.theme.TrtoolsproTheme
+<<<<<<< HEAD
 import com.mebubilisim.trtoolspro.TestPages.ui.DeadPixelScreenTestActivity
+=======
+>>>>>>> bafdf16 (2 commit)
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -72,6 +79,7 @@ class SountTestPage : ComponentActivity() {
     private var isRecording = false
     private var isPlaying = false
 
+<<<<<<< HEAD
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         queueMessage {
@@ -81,6 +89,28 @@ class SountTestPage : ComponentActivity() {
                 progress = 0
             )
         }
+=======
+    private val requestPermissionsLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { permissions ->
+        if (permissions.values.all { it }) {
+            setupContent()
+        } else {
+            Log.e(TAG, "Permissions not granted")
+            queueMessage {
+                SocketServer.sendMessageToAllClients(
+                    success = false,
+                    functionName = "SountTestPage",
+                    message = "The necessary permissions were not given.",
+                    progress = 100
+                )
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+>>>>>>> bafdf16 (2 commit)
         if (checkPermissions()) {
             setupContent()
         } else {
@@ -98,7 +128,11 @@ class SountTestPage : ComponentActivity() {
                     SpeakerTestScreen(
                         onTestSpeakersAndMic = { testSpeakersAndMic() },
                         onStopTest = { stopTest() },
+<<<<<<< HEAD
                         this
+=======
+                        this@SountTestPage
+>>>>>>> bafdf16 (2 commit)
                     )
                 }
             }
@@ -117,6 +151,7 @@ class SountTestPage : ComponentActivity() {
     }
 
     private fun requestPermissions() {
+<<<<<<< HEAD
         val requestPermissionsLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { permissions ->
@@ -135,6 +170,8 @@ class SountTestPage : ComponentActivity() {
             }
         }
 
+=======
+>>>>>>> bafdf16 (2 commit)
         requestPermissionsLauncher.launch(
             arrayOf(
                 Manifest.permission.RECORD_AUDIO,
@@ -148,7 +185,11 @@ class SountTestPage : ComponentActivity() {
         queueMessage {
             SocketServer.sendMessageToAllClients(
                 functionName = "SountTestPage",
+<<<<<<< HEAD
                 message = "Test başlatılıyor.",
+=======
+                message = "Testing is starting.",
+>>>>>>> bafdf16 (2 commit)
                 progress = 10
             )
         }
@@ -179,7 +220,11 @@ class SountTestPage : ComponentActivity() {
             queueMessage {
                 SocketServer.sendMessageToAllClients(
                     functionName = "SountTestPage",
+<<<<<<< HEAD
                     message = "Hoparlörden test sesi çalınıyor ve mikrofon ile dinleniyor.",
+=======
+                    message = "The test sound is played through the speaker and listened to through the microphone.",
+>>>>>>> bafdf16 (2 commit)
                     progress = 20
                 )
             }
@@ -195,7 +240,11 @@ class SountTestPage : ComponentActivity() {
                                 queueMessage {
                                     SocketServer.sendMessageToAllClients(
                                         functionName = "SountTestPage",
+<<<<<<< HEAD
                                         message = "Hoparlör testi tamamlandı. Mikrofon kaydı durduruluyor.",
+=======
+                                        message = "Speaker testing completed. Microphone recording is stopped.",
+>>>>>>> bafdf16 (2 commit)
                                         progress = 40
                                     )
                                 }
@@ -208,7 +257,11 @@ class SountTestPage : ComponentActivity() {
                             queueMessage {
                                 SocketServer.sendMessageToAllClients(
                                     functionName = "SountTestPage",
+<<<<<<< HEAD
                                     message = "Kaydedilen ses çalınıyor ve mikrofon doğrulanıyor.",
+=======
+                                    message = "The recorded audio is played and the microphone is verified.",
+>>>>>>> bafdf16 (2 commit)
                                     progress = 60
                                 )
                             }
@@ -218,7 +271,11 @@ class SountTestPage : ComponentActivity() {
                                         SocketServer.sendMessageToAllClients(
                                             success = true,
                                             functionName = "SountTestPage",
+<<<<<<< HEAD
                                             message = "Mikrofon testi başarılı.",
+=======
+                                            message = "Microphone test successful.",
+>>>>>>> bafdf16 (2 commit)
                                             progress = 100
                                         )
                                     }
@@ -229,7 +286,11 @@ class SountTestPage : ComponentActivity() {
                                         SocketServer.sendMessageToAllClients(
                                             success = false,
                                             functionName = "SountTestPage",
+<<<<<<< HEAD
                                             message = "Mikrofon testi başarısız.",
+=======
+                                            message = "Microphone test failed.",
+>>>>>>> bafdf16 (2 commit)
                                             progress = 100
                                         )
                                     }
@@ -244,7 +305,11 @@ class SountTestPage : ComponentActivity() {
                                 SocketServer.sendMessageToAllClients(
                                     success = false,
                                     functionName = "SountTestPage",
+<<<<<<< HEAD
                                     message = "MediaRecorder durdurulurken hata.",
+=======
+                                    message = "Error stopping MediaRecorder.",
+>>>>>>> bafdf16 (2 commit)
                                     progress = 100
                                 )
                             }
@@ -255,7 +320,11 @@ class SountTestPage : ComponentActivity() {
                                 SocketServer.sendMessageToAllClients(
                                     success = false,
                                     functionName = "SountTestPage",
+<<<<<<< HEAD
                                     message = "Mikrofon testi sırasında hata.",
+=======
+                                    message = "Error during microphone test.",
+>>>>>>> bafdf16 (2 commit)
                                     progress = 100
                                 )
                             }
@@ -281,7 +350,11 @@ class SountTestPage : ComponentActivity() {
                 SocketServer.sendMessageToAllClients(
                     success = false,
                     functionName = "SountTestPage",
+<<<<<<< HEAD
                     message = "Test sesi çalınırken hata.",
+=======
+                    message = "Error playing test sound.",
+>>>>>>> bafdf16 (2 commit)
                     progress = 100
                 )
             }
@@ -298,11 +371,20 @@ class SountTestPage : ComponentActivity() {
             SocketServer.sendMessageToAllClients(
                 success = speakerTestResult == TestResult.SUCCESS && micTestResult == TestResult.SUCCESS,
                 functionName = "SountTestPage",
+<<<<<<< HEAD
                 message = "Test tamamlandı.",
                 progress = 100
             )
         }
 
+=======
+                message = "Testing completed.",
+                progress = 100
+            )
+        }
+        Log.e(TAG, "Testing completed.")
+        PageState(this@SountTestPage, 1, 8, HandsetTestPage::class.java, MainActivity::class.java)
+>>>>>>> bafdf16 (2 commit)
         return@withContext Pair(speakerTestResult, micTestResult)
     }
 
@@ -367,11 +449,31 @@ fun SpeakerTestScreen(
     var isTesting by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
     val pageController by ServerDataRepository.pageController.collectAsState()
+<<<<<<< HEAD
     LaunchedEffect(pageController) {
         if (pageController == 2 || pageController == 3) {
             iptalAndNextClass(context, MainActivity::class.java, DeadPixelScreenTestActivity::class.java, "DoubleTouchScreenControlActivity")
         }
     }
+=======
+
+    LaunchedEffect(Unit) {
+        isTesting = true
+        coroutineScope.launch {
+            val (speakerResult, micResult) = onTestSpeakersAndMic()
+            speakerTestResult = speakerResult
+            micTestResult = micResult
+            isTesting = false
+        }
+    }
+
+    LaunchedEffect(pageController) {
+        if (pageController == 2 || pageController == 3) {
+            iptalAndNextClass(context, MainActivity::class.java, HandsetTestPage::class.java, "DoubleTouchScreenControlActivity")
+        }
+    }
+
+>>>>>>> bafdf16 (2 commit)
     Scaffold(
         topBar = {
             TopAppBar(
@@ -423,7 +525,22 @@ fun SpeakerTestScreen(
             }
 
             Button(
+<<<<<<< HEAD
                 onClick = onStopTest,
+=======
+                onClick = {
+                    onStopTest()
+                    queueMessage {
+                        SocketServer.sendMessageToAllClients(
+                            success = false,
+                            functionName = "SountTestPage",
+                            message = "Kullanıcı Tarafından iptal edildi",
+                            progress = 100
+                        )
+                    }
+                    PageState(context, 1, 8, HandsetTestPage::class.java, MainActivity::class.java)
+                },
+>>>>>>> bafdf16 (2 commit)
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
                 modifier = Modifier
                     .fillMaxWidth()

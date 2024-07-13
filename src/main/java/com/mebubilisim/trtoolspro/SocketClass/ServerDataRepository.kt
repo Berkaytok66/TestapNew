@@ -38,7 +38,11 @@ object ServerDataRepository {
             "brightness" -> {
                 pageController.value = 7 // Brightness Testi (Parlaklık)
             }
+<<<<<<< HEAD
             "soundTest" -> {
+=======
+            "newSountTest" -> {
+>>>>>>> bafdf16 (2 commit)
                 pageController.value = 8 // (ses)(Mic)(Ahize)(Jack)
             }
             "WifiTest" -> {

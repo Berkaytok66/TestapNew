@@ -18,4 +18,10 @@
     <string name="title_activity_gps_test">GpsTestActivity</string>
     <string name="title_activity_new_sount_test">NewSountTestActivity</string>
     <string name="title_activity_new_sound_test">NewSoundTestActivity</string>
+<<<<<<< HEAD
+=======
+    <string name="title_activity_handset_test_page">HandsetTestPage</string>
+    <string name="title_activity_battery">BatteryActivity</string>
+    <string name="title_activity_camera">CameraActivity</string>
+>>>>>>> bafdf16 (2 commit)
 </resources>
