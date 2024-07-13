@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- Wi-Fi durumunu görüntüleme ve değiştirme izinleri -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- Konum izinleri (Wi-Fi tarama için gereklidir) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- NFC İzni -->
+    <uses-permission android:name="android.permission.NFC" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Trtoolspro"
+        tools:targetApi="31">
+        <activity
+            android:name=".SountTest.SountTestPage"
+            android:exported="false"
+            android:label="@string/title_activity_sount_test_page"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".SountTestPages.NewSoundTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_new_sound_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".WifiAndBLTestfile.GpsTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_gps_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".WifiAndBLTestfile.NfcTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_nfc_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".WifiAndBLTestfile.BluetoothTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bluetooth_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".WifiAndBLTestfile.WifiTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_wifi_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".ConnectionCheck.NewConnection.WifiScreen"
+            android:exported="false"
+            android:label="@string/title_activity_wifi_screen"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".EquipmentPage.KeyEventTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_key_event_test"
+            android:theme="@style/Theme.Trtoolspro" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA9W5aDKQPuPoU4dMl6rN2px_8aRL6oKQg" />
+
+        <activity
+            android:name=".ConnectionCheck.ConnectActivity"
+            android:exported="false"
+            android:label="@string/title_activity_connect"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".SountTestPages.SoundTestPageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_sound_test_page"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".TestPages.ui.ScreenBrightnessTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_screen_brightness_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".TestPages.ui.DeadPixelScreenTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dead_pixel_screen_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".TestPages.ui.DoubleTouchScreenControlActivity"
+            android:exported="false"
+            android:label="@string/title_activity_double_touch_screen_control"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".ConfirmationPage.ResultScreenActivity"
+            android:exported="false"
+            android:label="@string/title_activity_result_screen"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".TestPages.ui.ScreenTouchControl"
+            android:exported="false"
+            android:label="@string/title_activity_screen_touch_control"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".TestPages.ui.theme.ScreenTouchControlActivity"
+            android:exported="false"
+            android:label="@string/title_activity_screen_touch_control"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".TestPages.TestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_test"
+            android:theme="@style/Theme.Trtoolspro" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Trtoolspro">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Receiver.AdbCommandReceiver"
+            android:exported="true"
+            android:permission="TODO"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.mebubilisim.trtoolspro" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

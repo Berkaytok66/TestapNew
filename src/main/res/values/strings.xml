@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">trtoolspro</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_screen_touch_control">ScreenTouchControlActivity</string>
+    <string name="title_activity_result_screen">ResultScreenActivity</string>
+    <string name="title_activity_double_touch_screen_control">DoubleTouchScreenControlActivity
+    </string>
+    <string name="title_activity_dead_pixel_screen_test">DeadPixelScreenTestActivity</string>
+    <string name="title_activity_screen_brightness_test">ScreenBrightnessTestActivity</string>
+    <string name="title_activity_sount_test_page">SountTestPageActivity</string>
+    <string name="title_activity_sound_test_page">SoundTestPageActivity</string>
+    <string name="title_activity_connect">ConnectActivity</string>
+    <string name="title_activity_key_event_test">KeyEventTestActivity</string>
+    <string name="title_activity_wifi_screen">WifiScreen</string>
+    <string name="title_activity_wifi_test">WifiTestActivity</string>
+    <string name="title_activity_bluetooth_test">BluetoothTestActivity</string>
+    <string name="title_activity_nfc_test">NfcTestActivity</string>
+    <string name="title_activity_gps_test">GpsTestActivity</string>
+    <string name="title_activity_new_sount_test">NewSountTestActivity</string>
+    <string name="title_activity_new_sound_test">NewSoundTestActivity</string>
+</resources>
