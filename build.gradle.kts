@@ -61,6 +61,14 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.compose.material)
     implementation(libs.androidx.games.activity)
+<<<<<<< HEAD
+=======
+    implementation (libs.androidx.camera.core)
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.view)
+    implementation (libs.androidx.camera.extensions)
+>>>>>>> bafdf16 (2 commit)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -88,6 +96,10 @@ dependencies {
     implementation (libs.androidx.activity.compose.v151)
     implementation (libs.androidx.preference.ktx)
     implementation (libs.androidx.datastore.preferences)
+<<<<<<< HEAD
 
+=======
+    implementation (libs.androidx.animation)
+>>>>>>> bafdf16 (2 commit)
 
 }

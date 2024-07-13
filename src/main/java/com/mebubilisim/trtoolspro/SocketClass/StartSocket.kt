@@ -214,6 +214,53 @@ object SocketServer {
             }
         }
     }
+<<<<<<< HEAD
+=======
+    @Synchronized
+    fun BatteryInfo(
+        Level: Int? = null,
+        Temperature: Int? = null,
+        Voltage: Int? = null,
+        Health: String? = null,
+        Capacity: Int? = null
+    ) {
+
+        thread {
+            try {
+                val secretKey = "!1qaz2WSX3edc%56" // 16-byte key, güvenli bir şekilde saklanmalı ve paylaşılmalı
+                for (clientSocket in clientSockets) {
+                    if (clientSocket.isClosed) {
+                        Log.d(TAG, "Client socket is closed, skipping")
+                        continue
+                    }
+                    try {
+                        val dataToSend = JSONObject().apply {
+                            Level?.let { put("Level", it) }
+                            Temperature?.let { put("Temperature", it) }
+                            Voltage?.let { put("Voltage", it) }
+                            Health?.let { put("Health", it) }
+                            Capacity?.let { put("Capacity", it) }
+                        }.toString()
+
+                        val encryptedData = AESHelper.encrypt(dataToSend, secretKey) // şifreli json data
+                        writer?.write(encryptedData)
+                        writer?.newLine()
+                        writer?.flush()
+
+                        return@thread
+
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Mesaj gönderme sırasında hata oluştu: ${e.message}")
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Mesaj gönderme sırasında hata oluştu: ${e.message}")
+                e.printStackTrace()
+            }
+        }
+    }
+
+>>>>>>> bafdf16 (2 commit)
     fun stopServer() {
         try {
             serverSocket?.close()

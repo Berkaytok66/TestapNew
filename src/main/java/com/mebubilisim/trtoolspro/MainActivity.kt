@@ -4,12 +4,22 @@ import ServerDataRepository
 import SocketServer
 import android.annotation.SuppressLint
 import android.content.Context
+<<<<<<< HEAD
 import android.net.wifi.WifiManager
+=======
+import android.content.Intent
+import android.content.IntentFilter
+import android.net.wifi.WifiManager
+import android.os.BatteryManager
+>>>>>>> bafdf16 (2 commit)
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.telephony.TelephonyManager
+<<<<<<< HEAD
 import android.util.Log
+=======
+>>>>>>> bafdf16 (2 commit)
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedContent
@@ -26,8 +36,11 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.with
 import androidx.compose.foundation.Image
+<<<<<<< HEAD
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+=======
+>>>>>>> bafdf16 (2 commit)
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,7 +50,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+<<<<<<< HEAD
 import androidx.compose.material3.Icon
+=======
+>>>>>>> bafdf16 (2 commit)
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -52,12 +68,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+<<<<<<< HEAD
 import androidx.compose.ui.composed
+=======
+>>>>>>> bafdf16 (2 commit)
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+<<<<<<< HEAD
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -78,6 +98,15 @@ import com.mebubilisim.trtoolspro.Page.HomePage
 import com.mebubilisim.trtoolspro.Page.SettingsPage
 import com.mebubilisim.trtoolspro.SountTest.SountTestPage
 import com.mebubilisim.trtoolspro.SountTestPages.SoundTestPageActivity
+=======
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.mebubilisim.trtoolspro.CameraFile.CameraActivity
+import com.mebubilisim.trtoolspro.Class.navigateAndFinishCurrent
+import com.mebubilisim.trtoolspro.EquipmentPage.KeyEventTestActivity
+import com.mebubilisim.trtoolspro.SountTest.HandsetTestPage
+import com.mebubilisim.trtoolspro.SountTest.SountTestPage
+>>>>>>> bafdf16 (2 commit)
 import com.mebubilisim.trtoolspro.TestPages.ui.DeadPixelScreenTestActivity
 import com.mebubilisim.trtoolspro.TestPages.ui.DoubleTouchScreenControlActivity
 import com.mebubilisim.trtoolspro.TestPages.ui.ScreenBrightnessTestActivity
@@ -106,7 +135,11 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Column {
+<<<<<<< HEAD
                  //       SayfaGecisleri()
+=======
+                        //       SayfaGecisleri()
+>>>>>>> bafdf16 (2 commit)
                         otoKomut(ServerDataRepository.messages,ServerDataRepository.portMessage)
                     }
                 }
@@ -115,6 +148,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+<<<<<<< HEAD
 @Composable
 fun SayfaGecisleri(){
     val navController = rememberNavController()
@@ -136,6 +170,9 @@ fun GreetingPreview() {
         SayfaGecisleri()
     }
 }
+=======
+
+>>>>>>> bafdf16 (2 commit)
 @OptIn(ExperimentalAnimationApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "CoroutineCreationDuringComposition")
 @Composable
@@ -167,9 +204,28 @@ fun otoKomut(messagesFlow: StateFlow<String>, portMessagesFlow: StateFlow<String
             "BluetoothTest" -> { navigateAndFinishCurrent(context,BluetoothTestActivity::class.java)}
             "NfcTest" -> { navigateAndFinishCurrent(context,NfcTestActivity::class.java)}
             "GpsTest" -> { navigateAndFinishCurrent(context, GpsTestActivity::class.java)}
+<<<<<<< HEAD
             "soundTest" -> { navigateAndFinishCurrent(context, SoundTestPageActivity::class.java) }
             "newSountTest" -> { navigateAndFinishCurrent(context, SountTestPage::class.java)}
             "KeyEventTestActivity" -> { navigateAndFinishCurrent(context, KeyEventTestActivity::class.java) }
+=======
+            // "soundTest" -> { navigateAndFinishCurrent(context, SoundTestPageActivity::class.java) }
+            "newSountTest" -> { navigateAndFinishCurrent(context, SountTestPage::class.java)}
+            "HandsetTestPage" -> { navigateAndFinishCurrent(context, HandsetTestPage::class.java)}
+            "CameraPage" -> { navigateAndFinishCurrent(context, CameraActivity::class.java)}
+            "KeyEventTestActivity" -> { navigateAndFinishCurrent(context, KeyEventTestActivity::class.java) }
+            "BatteryInfo" -> {
+                val batteryInfo = getBatteryDetails(context)
+                SocketServer.BatteryInfo(
+                    Level = batteryInfo.level,
+                    Temperature = batteryInfo.temperature,
+                    Voltage = batteryInfo.voltage,
+                    Health = batteryInfo.health,
+                    Capacity = batteryInfo.capacity
+                )
+            }
+
+>>>>>>> bafdf16 (2 commit)
             "info" -> {
                 SocketServer.sendDeviceInfo(
                     Manufacturer = deviceInfo.manufacturer,
@@ -188,6 +244,10 @@ fun otoKomut(messagesFlow: StateFlow<String>, portMessagesFlow: StateFlow<String
                     Density_DPI = deviceInfo.densityDpi.toString()
                 )
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> bafdf16 (2 commit)
         }
 
         ServerDataRepository.resetMessage()  // Komut işlendikten sonra mesajı sıfırla
@@ -244,6 +304,7 @@ fun otoKomut(messagesFlow: StateFlow<String>, portMessagesFlow: StateFlow<String
         }
     }
 }
+<<<<<<< HEAD
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen(navController: NavController, messagesFlow: StateFlow<String>) {
@@ -358,6 +419,9 @@ fun Modifier.noRippleClickable(onClick: () -> Unit): Modifier = composed {
         onClick()
     }
 }
+=======
+
+>>>>>>> bafdf16 (2 commit)
 @SuppressLint("ServiceCast", "MissingPermission")
 private fun getDeviceInfo(context: Context): DeviceInfo {
     val manufacturer = Build.MANUFACTURER
@@ -407,6 +471,50 @@ private fun getDeviceInfo(context: Context): DeviceInfo {
         densityDpi = densityDpi
     )
 }
+<<<<<<< HEAD
+=======
+
+@SuppressLint("ServiceCast")
+private fun getBatteryDetails(context: Context): BatteryDetails {
+    val batteryManager = context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+    val batteryStatus: Intent? = IntentFilter(Intent.ACTION_BATTERY_CHANGED).let { ifilter ->
+        context.registerReceiver(null, ifilter)
+    }
+
+    val level = batteryStatus?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
+    val temp = batteryStatus?.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, -1) ?: -1
+    val voltage = batteryStatus?.getIntExtra(BatteryManager.EXTRA_VOLTAGE, -1) ?: -1
+
+    val health = when (batteryStatus?.getIntExtra(BatteryManager.EXTRA_HEALTH, -1) ?: -1) {
+        BatteryManager.BATTERY_HEALTH_GOOD -> "İyi"
+        BatteryManager.BATTERY_HEALTH_OVERHEAT -> "Aşırı Isınma"
+        BatteryManager.BATTERY_HEALTH_DEAD -> "Ölü"
+        BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE -> "Aşırı Voltaj"
+        BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE -> "Belirtilmemiş Hata"
+        BatteryManager.BATTERY_HEALTH_COLD -> "Soğuk"
+        else -> "Bilinmiyor"
+    }
+
+    val capacity = batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY).toInt()
+
+    return BatteryDetails(
+        level = level,
+        temperature = temp / 10, // Temperature is reported in tenths of a degree Celsius.
+        voltage = voltage,
+        health = health,
+        capacity = capacity
+    )
+}
+
+data class BatteryDetails(
+    val level: Int,
+    val temperature: Int,
+    val voltage: Int,
+    val health: String,
+    val capacity: Int
+)
+
+>>>>>>> bafdf16 (2 commit)
 data class DeviceInfo(
     val manufacturer: String,
     val model: String,
@@ -418,9 +526,16 @@ data class DeviceInfo(
     val androidId: String,
     val simCountryIso: String,
     val networkOperatorName: String,
+<<<<<<< HEAD
 
+=======
+>>>>>>> bafdf16 (2 commit)
     val macAddress: String,
     val widthPixels: Int,
     val heightPixels: Int,
     val densityDpi: Int
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> bafdf16 (2 commit)

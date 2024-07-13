@@ -7,5 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
+<<<<<<< HEAD
     <color name="hexCopy">#E2FFFFFF</color>
+=======
+    <color name="hexCopy">#DC2626</color>
+>>>>>>> bafdf16 (2 commit)
 </resources>
